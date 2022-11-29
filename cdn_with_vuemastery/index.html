@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./assets/shortcut-icon.jpg"
+      type="image/jpg"
+    />
+
     <link rel="stylesheet" href="./style.css" />
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <title>Vue Mastery</title>
@@ -18,6 +24,12 @@
         </div>
         <div class="product-info">
           <h1>{{product}}</h1>
+          <!-- <p v-if="inventory > 10">In Stock</p> -->
+          <!-- <p v-else-if="inventory <= 10 && inventory > 0">Almost Sold Out!</p> -->
+          <p v-show="inStock">In Stock</p>
+          <!-- ^^^ toggles visibility off and on -->
+          <p v-else>Out of Stock</p>
+          <span v-if="onSale">On Sale!</span>
           <a :href="link" target="_blank">More products like this</a>
         </div>
       </div>
