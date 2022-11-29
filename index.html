@@ -9,7 +9,41 @@
     <title>Vue expriments</title>
   </head>
   <body>
-    <div id="app">{{message}}</div>
+    <div id="app">
+      <p>{{heading}}</p>
+      <button v-on:click="reverseHeading">Reverse Heading</button>
+      <br />
+      <br />
+      <br />
+      <p>{{inputField}}</p>
+      <input v-model="inputField" Reverse Heading />
+      <br />
+      <br />
+      <br />
+      <p v-if="seen">
+        A sentence to see or to be hidden: setting .seen to
+        <b>true</b>
+        or
+        <b>false</b>
+      </p>
+      <h3>{{message}}</h3>
+      <h4>This list is created with v-for looping through a list of todos</h4>
+
+      <ol>
+        <li v-for="todo in todos">{{todo.text}}</li>
+      </ol>
+      <br />
+      <br />
+      <br />
+      <h4>This list is created using components and v-bind</h4>
+      <ol>
+        <todo-item
+          v-for="item in groceryList"
+          v-bind:todo="item"
+          v-bind:key="item.id"
+        ></todo-item>
+      </ol>
+    </div>
 
     <script src="./index.js"></script>
   </body>
