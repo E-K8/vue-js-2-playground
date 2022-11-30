@@ -18,48 +18,9 @@
     <div class="navbar"></div>
 
     <div id="app">
-      <div class="product">
-        <div class="product-image">
-          <img :src="image" alt="" />
-        </div>
-        <div class="product-info">
-          <h1>{{title}}</h1>
-          <!-- <p v-if="inventory > 10">In Stock</p> -->
-          <!-- <p v-else-if="inventory <= 10 && inventory > 0">Almost Sold Out!</p> -->
-          <!-- <p v-show="inStock">In Stock</p> -->
-          <!-- ^^^ toggles visibility off and on -->
-          <p v-if="inStock">In Stock</p>
-          <p v-else :class="{outOfStock:!inStock}">Out of Stock</p>
-          <p>{{sale}}</p>
-          <!-- <span v-if="onSale">On Sale!</span> -->
-          <a :href="link" target="_blank">More products like this</a>
-          <ul>
-            <li v-for="detail in details">{{detail}}</li>
-          </ul>
-          <ul>
-            <li v-for="size in sizes">{{ size }}</li>
-          </ul>
-          <div
-            v-for="(variant, index) in variants"
-            :key="variant.variantId"
-            class="color-box"
-            :style="{backgroundColor: variant.variantColour }"
-            @mouseover="updateProduct(index)"
-          ></div>
-        </div>
-
-        <div class="cart">
-          <p>Cart ({{cart}})</p>
-        </div>
-        <button
-          v-on:click="addToCart"
-          :disabled="!inStock"
-          :class="{disabledButton: !inStock}"
-        >
-          Add to cart
-        </button>
-        <button @click="removeFromCart">Remove from cart</button>
-      </div>
+      <product :premium="premium"></product>
+      <product></product>
+      <product></product>
     </div>
 
     <script src="./script.js"></script>
