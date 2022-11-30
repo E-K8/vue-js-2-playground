@@ -47,9 +47,10 @@ img {
 }
 
 button {
-  margin-top: 30px;
+  /* margin-top: 30px; */
+  margin: 0.7rem 0.5rem 0 0;
   border: none;
-  background-color: #1e95ea;
+  background-color: #1a7dc3;
   color: white;
   height: 40px;
   width: 100px;
